@@ -1,0 +1,6 @@
+@AbbysTowerAPI_HostAddress = http://localhost:5070
+
+GET {{AbbysTowerAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
