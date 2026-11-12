@@ -63,6 +63,10 @@ namespace AbbysTowerAPI.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("idLevel"));
 
+                    b.Property<string>("Imagen")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("longtext");

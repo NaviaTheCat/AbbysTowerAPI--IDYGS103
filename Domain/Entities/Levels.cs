@@ -11,6 +11,7 @@ namespace Domain.Entities
         public int idLevel { get; set; }
         public string Nombre { get; set; }
         public string descripcion { get; set; }
+        public string? Imagen { get; set; }
 
     }
 }

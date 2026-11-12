@@ -56,10 +56,11 @@ namespace AbbysTowerAPI.Services.Services
                 {
                     newLevel.Nombre = request.Nombre;
                     newLevel.descripcion = request.descripcion;
+                    newLevel.Imagen = request.Imagen;
                 }
 
                 var result = await _context.Levels.AddAsync(newLevel);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return new Response<Levels>(newLevel, "Nivel creado correctamente");
 
             }
@@ -80,9 +81,10 @@ namespace AbbysTowerAPI.Services.Services
                 }
                 result.Nombre = request.Nombre;
                 result.descripcion = request.descripcion;
-               
+                result.Imagen = request.Imagen;
+
                 _context.Levels.Update(result);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return new Response<Levels>(result, "Se actualizo correctamente");
             }
             catch (Exception ex)
@@ -101,7 +103,7 @@ namespace AbbysTowerAPI.Services.Services
                     return new Response<Levels>(null, "No se encontro el nivel");
                 }
                 _context.Levels.Remove(result);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return new Response<Levels>(result, "Se elimino correctamente");
             }
             catch (Exception ex)

@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="DTOs\" />
     <Folder Include="Migrations\" />
 	  <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>

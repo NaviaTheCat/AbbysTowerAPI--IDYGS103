@@ -19,6 +19,8 @@ builder.Services.AddTransient<ILevelServices, LevelServices>();
 
 var app = builder.Build();
 
+// Servir archivos estáticos (imágenes)
+app.UseStaticFiles();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
